@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 22:31:09 by tvanbesi          #+#    #+#             */
-/*   Updated: 2019/11/14 23:13:39 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/08/22 14:53:40 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void
-	ft_putstr(char *s, size_t n)
+	ft_putnstr(char *s, size_t n)
 {
 	while (*s && n-- > 0)
 		ft_putchar(*s++);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 16:47:37 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/05 14:03:25 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/08/22 16:10:27 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,15 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
+char    **ft_splits(char const *s, char *str);
+double  ft_atof(char *str);
+double  ft_pow(double x, int y);
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
+int     ft_isspace(int c);
 int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

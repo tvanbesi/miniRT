@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 19:54:54 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/22 14:53:02 by thomasvanbe      ###   ########.fr       */
+/*   Created: 2020/08/22 14:39:18 by thomasvanbe       #+#    #+#             */
+/*   Updated: 2020/08/22 15:17:29 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int
-	ft_atoi(const char *str)
+double
+    ft_pow(double x, int y)
 {
-	int s;
-	int r;
+    double  r;
 
-	s = 1;
-	r = 0;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '+' || *str == '-')
-		if (*str++ == '-')
-			s = -1;
-	while (ft_isdigit(*str))
-		r = r * 10 + (*str++ - '0');
-	return (r * s);
+    if (x == 0.0)
+        return (x);
+    r = 1.0;
+    if (y > 0)
+        while (y-- > 0)
+            r *= x;
+    else
+        while (y++ < 0)
+            r /= x;
+    return (r);
 }

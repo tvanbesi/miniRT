@@ -1,1 +1,1 @@
-gcc -Iheaders -I minilibX -L minilibX -lmlx -framework OpenGL -framework Appkit *.c lib/libft.a && ./a.out
+gcc -Iheaders -Ilibft -IminilibX -L minilibX -lmlx -framework OpenGL -framework Appkit srcs/main.c  lib/miniRT.a && ./a.out
