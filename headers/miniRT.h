@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/05 17:28:37 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/08/22 20:17:12 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,7 +217,10 @@ int			ft_getcolor(t_color *rgb);
 int			ft_intersect(t_ray *ray, t_object *object, double *solution);
 int			ft_quadratic_eq(double coeffs[3], double *solutions);
 int			ft_ray_tracer(t_screen *screen, t_scene *scene);
-int			ft_findobjtoparse(char *line);
+int			ft_getobjval(char *line);
+int			ft_isvalid_int(char *s);
+int			ft_isvalid_db(char *s);
+int			ft_isvalid_rgb(char *s);
 t_coords	ft_cross(t_coords *a, t_coords *b);
 t_coords	ft_coo_sub(t_coords *a, t_coords *b);
 t_coords	ft_coo_add(t_coords *a, t_coords *b);

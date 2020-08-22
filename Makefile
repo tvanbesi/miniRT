@@ -7,6 +7,8 @@ _SRCS				=	debug.c \
 						math.c \
 						math_vector.c \
 						matrix.c \
+						parsing.c \
+						parsing_strsanity.c \
 						ray_tracer.c \
 						shade.c \
 						utils.c
@@ -16,7 +18,7 @@ OBJS				= ${_SRCS:.c=.o}
 CC					= gcc
 # CFLAGS				= -Wall -Werror -Wextra
 CFLAGS				=
-INC					= -Iheaders -IminilibX
+INC					= -Iheaders -IminilibX -Ilibft
 LIB					= lib/
 RM					= rm -rf
 
