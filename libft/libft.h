@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 16:47:37 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/22 17:02:02 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/25 15:07:37 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,10 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_freen(void *p);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putnstr(char *s, size_t n);
+void    ft_splitf(char **a);
 
 #endif

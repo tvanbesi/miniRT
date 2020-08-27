@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 18:09:36 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/22 20:16:45 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/23 13:09:23 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 int
 	ft_isvalid_int(char *s)
 {
+	if (*s == '-')
+		s++;
 	while (*s)
 		if (!ft_isdigit(*s++))
 			return (0);
@@ -24,6 +26,8 @@ int
 static int
 	ft_isvalid_intendc(char *s, const char *c)
 {
+	if (*s == '-')
+		s++;
 	if (!ft_isdigit(*s))
 		return (0);
 	while (ft_isdigit(*s))
@@ -34,6 +38,8 @@ static int
 int
 	ft_isvalid_db(char *s)
 {
+	if (*s == '-')
+		s++;
 	if (!ft_isvalid_intendc(s, ".\0"))
 		return (0);
 	if (!(s = ft_strchr(s, '.')))
@@ -45,10 +51,12 @@ int
 	return (1);
 }
 
-int
+static int
 	ft_isvalid_dbendc(char *s, const char *c)
 {
-	if (!ft_isvalid_intendc(s, c) || !ft_isvalid_intendc(s, "."))
+	if (*s == '-')
+		s++;
+	if (!ft_isvalid_intendc(s, c) && !ft_isvalid_intendc(s, "."))
 		return (0);
 	if (!(s = ft_strchr(s, '.')))
 		return (1);

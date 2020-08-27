@@ -8,10 +8,15 @@ _SRCS				=	debug.c \
 						math_vector.c \
 						matrix.c \
 						parsing.c \
+						parsing_linesanity1.c \
+						parsing_linesanity2.c \
+						parsing_obj.c \
 						parsing_strsanity.c \
 						ray_tracer.c \
 						shade.c \
-						utils.c
+						utils.c \
+						utils_parsing.c \
+						utils_sanity.c
 SRCS				= ${_SRCS:%=${SDIR}/%}
 OBJS				= ${_SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/22 20:17:12 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/27 17:29:28 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 #define MAX_OBJECTS 100
 #define MAX_LIGHTS	10
 #define MAX_CAMERAS	10
+#define MAX_RESX	1920
+#define	MAX_RESY	1080
 
 typedef	enum	e_objects
 {
@@ -41,6 +43,12 @@ typedef	enum	e_objects
 	CAMERA,
 	RESOLUTION
 }				te_objects;
+
+typedef enum	e_coordstype
+{
+	ORI,
+	POS
+}				t_coordstype;
 
 typedef enum	e_dimensions
 {
@@ -90,11 +98,13 @@ typedef struct	s_camera
 {
 	t_coords	pos;
 	t_coords	ori;
+	int			fov;
 }				t_camera;
 
 typedef struct	s_light
 {
 	t_coords	pos;
+	t_color		rgb;
 	int			color;
 	double		lum;
 }				t_light;
@@ -103,7 +113,9 @@ typedef struct	s_sphere
 {
 	int			type;
 	t_coords	pos;
+	double		diameter;
 	double		radius;
+	t_color		rgb;
 	int			color;
 }				t_sphere;
 
@@ -115,8 +127,9 @@ typedef struct	s_cylinder
 	t_matrix	Si;
 	t_coords	pos;
 	t_coords	ori;
-	double		diameter;
+	double		radius;
 	double		height;
+	t_color		rgb;
 	int			color;
 	int			lastfacehit;
 }				t_cylinder;
@@ -125,7 +138,9 @@ typedef struct	s_plane
 {
 	int			type;
 	t_coords	pos;
+	t_coords	ori;
 	t_coords	norm;
+	t_color		rgb;
 	int			color;
 }				t_plane;
 
@@ -133,10 +148,13 @@ typedef struct	s_square
 {
 	int			type;
 	t_coords	pos;
+	t_coords	ori;
 	t_coords	norm;
 	t_coords	e1;
 	t_coords	e2;
+	double		height;
 	double		height2;
+	t_color		rgb;
 	int			color;
 }				t_square;
 
@@ -147,6 +165,7 @@ typedef struct	s_triangle
 	t_coords	v2;
 	t_coords	v3;
 	t_coords	norm;
+	t_color		rgb;
 	int			color;
 }				t_triangle;
 
@@ -161,19 +180,6 @@ typedef union	u_object
 	t_triangle	triangle;
 }				t_object;
 
-typedef struct	s_scene
-{
-	t_object	objects[MAX_OBJECTS];
-	t_light		lights[MAX_LIGHTS];
-	t_light		amblight;
-	t_camera	cameras[MAX_CAMERAS];
-	t_matrix	*ctw_matrix;
-	int			camselect;
-	int			cam_count;
-	int			light_count;
-	int			obj_count;
-}				t_scene;
-
 typedef struct	s_screen
 {
 	double	tfov2;
@@ -183,6 +189,20 @@ typedef struct	s_screen
 	void	*mlx;
 	void	*window;
 }				t_screen;
+
+typedef struct	s_scene
+{
+	t_object	objects[MAX_OBJECTS];
+	t_light		lights[MAX_LIGHTS];
+	t_light		amblight;
+	t_camera	cameras[MAX_CAMERAS];
+	t_matrix	*ctw_matrix;
+	t_screen	screen;
+	int			camselect;
+	int			cam_count;
+	int			light_count;
+	int			obj_count;
+}				t_scene;
 
 typedef struct	s_ray
 {
@@ -217,26 +237,58 @@ int			ft_getcolor(t_color *rgb);
 int			ft_intersect(t_ray *ray, t_object *object, double *solution);
 int			ft_quadratic_eq(double coeffs[3], double *solutions);
 int			ft_ray_tracer(t_screen *screen, t_scene *scene);
-int			ft_getobjval(char *line);
+int			ft_getobjtype(char *line);
 int			ft_isvalid_int(char *s);
 int			ft_isvalid_db(char *s);
 int			ft_isvalid_rgb(char *s);
+int			ft_isvalid_3db(char *s);
+int			ft_isvalid_res(char **a);
+int			ft_isvalid_alight(char **a);
+int			ft_isvalid_cam(char **a);
+int			ft_isvalid_light(char **a);
+int			ft_isvalid_sphere(char **a);
+int			ft_isvalid_plane(char **a);
+int			ft_isvalid_square(char **a);
+int			ft_isvalid_cyl(char **a);
+int			ft_isvalid_triangle(char **a);
+int			ft_isvalid_splitline(int objtype, char **a);
+int			ft_isvalid_fov(int fov);
+int			ft_isvvalid_rgb(t_color color);
+int			ft_isvvalid_ori(t_coords ori);
+int			ft_isvvalid_lum(double lum);
+int			ft_parse_color(t_color *color, const char *s);
+int			ft_parse_coords(t_coords *c, const char *s, int ctype);
+int			ft_parse_res(char **a, t_screen *screen);
+int			ft_parse_line(char *line, t_scene *scene);
+int			ft_parse_cam(char **a, t_scene *scene);
+int			ft_parse_sphere(char **a, t_scene *scene);
+int			ft_parse_plane(char **a, t_scene *scene);
+int			ft_parse_cylinder(char **a, t_scene *scene);
+int			ft_parse_square(char **a, t_scene *scene);
+int			ft_parse_triangle(char **a, t_scene *scene);
+int			ft_parse_amblight(char **a, t_light *amblight);
+int			ft_parse_light(char **a, t_scene *scene);
 t_coords	ft_cross(t_coords *a, t_coords *b);
 t_coords	ft_coo_sub(t_coords *a, t_coords *b);
 t_coords	ft_coo_add(t_coords *a, t_coords *b);
 t_coords	ft_coo_mlt(t_coords *a, double b);
 t_camera	ft_mkcamera(t_coords pos, t_coords ori);
-t_light		ft_mklight(t_coords pos, int color, double lum);
 t_object	ft_mkplane(t_coords pos, t_coords ori, int color);
 t_object	ft_mksphere(t_coords pos, double diameter, int color);
 t_object	ft_mksquare(t_coords pos, t_coords ori, double height, int color);
 t_object	ft_mkcylinder(t_coords pos, t_coords ori, double height, double radius, int color);
 t_object	ft_mktriangle(t_coords *vertices, int color);
+t_light		ft_mklight(t_coords pos, int color, double lum);
 void		ft_normalize(t_coords *a);
 void		ft_print_coords(t_coords c);
 void		ft_print_matrix(t_matrix *matrix);
 void		ft_print_matrix3(t_matrix3 *m);
 void		ft_print_coordscp(t_coords_cp c);
+void		ft_print_screen(t_screen *screen);
+void		ft_print_scene(t_scene *scene);
+void		ft_print_rgb(t_color *rgb);
+void		ft_print_camera(t_camera *cam);
+void		ft_print_light(t_light *light);
 void		ft_vec_mat_mlt(t_coords *c, t_matrix *m);
 void		ft_swap_double(double *a, double *b);
 void		ft_shade(t_surf_pt *p_hit, t_object *obj, t_light *light);
@@ -245,5 +297,7 @@ void		ft_shade_flatsurf(t_surf_pt *p_hit, t_object *obj, t_light *light);
 void		ft_shade_cylinder(t_surf_pt *p_hit, t_object *obj, t_light *light);
 void		ft_shade_color(t_surf_pt *p_hit, int color, t_light *light, double facing_ratio);
 void		ft_shade_amblight(t_surf_pt *p_hit, t_object *obj, t_light *amblight);
+void		ft_mkscene(t_scene *scene);
+void		ft_selectcam(t_scene *scene, int camselect);
 
 #endif

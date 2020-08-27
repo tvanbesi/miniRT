@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 02:27:24 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/04 18:37:38 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/08/27 17:35:09 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,4 +168,20 @@ t_object
 	obj.color = color;
 	r.triangle = obj;
 	return (r);
+}
+
+void
+	ft_mkscene(t_scene *scene)
+{
+	scene->cam_count = 0;
+	scene->light_count = 0;
+	scene->obj_count = 0;
+}
+
+void
+	ft_selectcam(t_scene *scene, int camselect)
+{
+	scene->camselect = camselect;
+	scene->screen.tfov2 = tan((double)scene->cameras[camselect].fov / 2.0 * M_PI / 180);
+	scene->ctw_matrix = ft_mat_rot(&scene->cameras[camselect].ori);
 }

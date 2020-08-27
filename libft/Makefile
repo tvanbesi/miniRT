@@ -2,6 +2,7 @@ SRCS		=	ft_atof.c \
 				ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
+				ft_freen.c \
 				ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
@@ -25,6 +26,7 @@ SRCS		=	ft_atof.c \
 				ft_putstr.c \
 				ft_putstr_fd.c \
 				ft_split.c \
+				ft_splitf.c \
 				ft_splits.c \
 				ft_strchr.c \
 				ft_strdup.c \
