@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 02:27:24 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/27 17:35:09 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/28 12:06:57 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,8 @@ void
 	scene->cam_count = 0;
 	scene->light_count = 0;
 	scene->obj_count = 0;
+	scene->res_set = 0;
+	scene->amb_set = 0;
 }
 
 void

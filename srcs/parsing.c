@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 00:26:04 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/27 15:34:38 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/28 12:05:23 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ int
 	if (ft_isvalid_splitline(objtype, splitline))
 	{
 		if (objtype == RESOLUTION)
-			r = ft_parse_res(splitline, &scene->screen);
+			r = ft_parse_res(splitline, scene);
 		else if (objtype == AMBLIGHT)
-			r = ft_parse_amblight(splitline, &scene->amblight);
+			r = ft_parse_amblight(splitline, scene);
 		else if (objtype == CAMERA)
 			r = ft_parse_cam(splitline, scene);
 		else if (objtype == LIGHT)

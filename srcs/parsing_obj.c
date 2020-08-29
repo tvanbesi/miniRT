@@ -6,37 +6,52 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 13:11:15 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/27 16:55:03 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/28 12:18:14 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
 int
-    ft_parse_res(char **a, t_screen *screen)
+    ft_parse_res(char **a, t_scene *scene)
 {
+	t_screen	*screen;
+
+	if (scene->res_set)
+		return (0);
+	screen = &scene->screen;
     screen->width = ft_atoi(a[1]);
     screen->height = ft_atoi(a[2]);
-    if (screen->width >= 0 && screen->width <= MAX_RESX
-        && screen->height >= 0 && screen->height <= MAX_RESY)
+    if (screen->width >= 0 && screen->height >= 0)
 	{
+		if (screen->width > MAX_RESX)
+			screen->width = MAX_RESX;
+		if (screen->height > MAX_RESY)
+			screen->height = MAX_RESY;
 		screen->mlx = mlx_init();
 		screen->aspect_ratio = (double)screen->width / (double)screen->height;
 		screen->window = mlx_new_window(screen->mlx, screen->width, screen->height, "miniRT");
+		scene->res_set = 1;
         return (1);
 	}
     return (0);
 }
 
 int
-    ft_parse_amblight(char **a, t_light *amblight)
+    ft_parse_amblight(char **a, t_scene *scene)
 {
+	t_light	*amblight;
+
+	if (scene->amb_set)
+		return (0);
+	amblight = &scene->amblight;
 	amblight->lum = ft_atof(a[1]);
 	if (!ft_isvvalid_lum(amblight->lum))
 		return (0);
 	if (!ft_parse_color(&amblight->rgb, a[2]))
 		return (0);
 	amblight->color = ft_getcolor(&amblight->rgb);
+	scene->amb_set = 1;
 	return (1);
 }
 

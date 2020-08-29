@@ -13,8 +13,10 @@ _SRCS				=	debug.c \
 						parsing_obj.c \
 						parsing_strsanity.c \
 						ray_tracer.c \
+						save.c \
 						shade.c \
 						utils.c \
+						utils_mlx.c \
 						utils_parsing.c \
 						utils_sanity.c
 SRCS				= ${_SRCS:%=${SDIR}/%}

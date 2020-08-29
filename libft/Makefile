@@ -21,6 +21,7 @@ SRCS		=	ft_atof.c \
 				ft_putchar.c \
 				ft_putchar_fd.c \
 				ft_putendl_fd.c \
+				ft_putint_fd.c \
 				ft_putnbr_fd.c \
 				ft_putnstr.c \
 				ft_putstr.c \

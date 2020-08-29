@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:48 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/27 17:39:11 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/29 14:37:45 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,13 @@ static void
 }
 
 int
-	ft_ray_tracer(t_screen *screen, t_scene *scene)
+	ft_ray_tracer(t_screen *screen, t_scene *scene, unsigned char *data_addr)
 {
 	int			i;
 	int			j;
 	t_surf_pt	p_hit;
 	t_ray		*ray;
+	int			*p;
 
 	i = 0;
 	j = 0;
@@ -118,7 +119,9 @@ int
 			{
 				ft_shade_amblight(&p_hit, &scene->objects[p_hit.iobj], &scene->amblight);
 				ft_shadray(ray, scene, &p_hit);
-				mlx_pixel_put(screen->mlx, screen->window, j - 1, i - 1, p_hit.color);
+				p = (int*)data_addr;
+				*p = p_hit.color;
+				data_addr += 4;
 			}
 			free(ray);
 		}
