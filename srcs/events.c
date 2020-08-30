@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 17:19:10 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/29 17:34:21 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/30 16:16:09 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
 int
-	ft_close()
+	ft_close(void)
 {
 	exit(0);
 }
@@ -26,6 +26,7 @@ int
 	scene = (t_scene*)param;
 	if (keycode == 49)
 	{
+		mlx_clear_window(scene->screen.mlx, scene->screen.window);
 		mlx_put_image_to_window(scene->screen.mlx, scene->screen.window,
 		scene->images[scene->camselect].ptr, 0, 0);
 		scene->camselect++;

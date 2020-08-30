@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/29 17:21:31 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/30 15:58:19 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -286,8 +286,16 @@ int			ft_parse_file(t_scene *scene, char *filename);
 int			ft_screenshot(t_scene *scene, char *filename);
 int			ft_draw_image(t_scene *scene, int camselect);
 int			ft_draw_all_images(t_scene *scene);
-int			ft_close();
+int			ft_close(void);
 int			ft_key_hook(int keycode, void *param);
+int			ft_isqnscissq_inter_positive(t_coords *p1, t_coords *p2);
+int			ft_oddeven_vertices_test(t_coords v[3]);
+int			ft_oddeven_test(t_coords point, t_object tr);
+int			ft_intersect_sphere(t_ray *ray, t_object *object, double *solution);
+int			ft_intersect_cylinder(t_ray *ray, t_object *object, double *solution);
+int			ft_intersect_plane(t_ray *ray, t_object *object, double *solution);
+int			ft_intersect_square(t_ray *ray, t_object *object, double *solution);
+int			ft_intersect_triangle(t_ray *ray, t_object *object, double *solution);
 t_coords	ft_cross(t_coords *a, t_coords *b);
 t_coords	ft_coo_sub(t_coords *a, t_coords *b);
 t_coords	ft_coo_add(t_coords *a, t_coords *b);

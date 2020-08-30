@@ -1,11 +1,13 @@
-SDIR			= srcs
-
+SDIR				=	srcs
 _SRCS				=	debug.c \
 						draw.c \
 						events.c \
 						get_next_line.c \
 						get_next_line_utils.c \
 						intersect.c \
+						intersect_obj1.c \
+						intersect_obj2.c \
+						intersect_utils.c \
 						math.c \
 						math_vector.c \
 						matrix.c \
@@ -23,14 +25,12 @@ _SRCS				=	debug.c \
 						utils_sanity.c
 SRCS				= ${_SRCS:%=${SDIR}/%}
 OBJS				= ${_SRCS:.c=.o}
-
 CC					= gcc
 # CFLAGS				= -Wall -Werror -Wextra
 CFLAGS				=
 INC					= -Iheaders -IminilibX -Ilibft
 LIB					= lib/
 RM					= rm -rf
-
 NAME				= miniRT.a
 
 %.o :				${SDIR}/%.c
