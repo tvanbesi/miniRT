@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:48 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/29 14:37:45 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/29 17:22:11 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static void
 }
 
 int
-	ft_ray_tracer(t_screen *screen, t_scene *scene, unsigned char *data_addr)
+	ft_ray_tracer(t_scene *scene, unsigned char *data_addr)
 {
 	int			i;
 	int			j;
@@ -107,11 +107,11 @@ int
 
 	i = 0;
 	j = 0;
-	while (i++ < screen->height)
+	while (i++ < scene->screen.height)
 	{
-		while (j++ < screen->width)
+		while (j++ < scene->screen.width)
 		{
-			if (!(ray = ft_mkray(screen, scene, j, i)))
+			if (!(ray = ft_mkray(&scene->screen, scene, j, i)))
 				return (0);
 			p_hit.color = 0;
 			ft_primray(ray, scene, &p_hit);

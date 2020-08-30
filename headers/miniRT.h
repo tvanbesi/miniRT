@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/29 14:14:02 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/29 17:21:31 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,7 +250,7 @@ double		ft_dot(t_coords *a, t_coords *b);
 int			ft_getcolor(t_color *rgb);
 int			ft_intersect(t_ray *ray, t_object *object, double *solution);
 int			ft_quadratic_eq(double coeffs[3], double *solutions);
-int			ft_ray_tracer(t_screen *screen, t_scene *scene, unsigned char *data_addr);
+int			ft_ray_tracer(t_scene *scene, unsigned char *data_addr);
 int			ft_getobjtype(char *line);
 int			ft_isvalid_int(char *s);
 int			ft_isvalid_db(char *s);
@@ -282,7 +282,12 @@ int			ft_parse_square(char **a, t_scene *scene);
 int			ft_parse_triangle(char **a, t_scene *scene);
 int			ft_parse_amblight(char **a, t_scene *scene);
 int			ft_parse_light(char **a, t_scene *scene);
+int			ft_parse_file(t_scene *scene, char *filename);
 int			ft_screenshot(t_scene *scene, char *filename);
+int			ft_draw_image(t_scene *scene, int camselect);
+int			ft_draw_all_images(t_scene *scene);
+int			ft_close();
+int			ft_key_hook(int keycode, void *param);
 t_coords	ft_cross(t_coords *a, t_coords *b);
 t_coords	ft_coo_sub(t_coords *a, t_coords *b);
 t_coords	ft_coo_add(t_coords *a, t_coords *b);

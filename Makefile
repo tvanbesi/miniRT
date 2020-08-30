@@ -1,6 +1,8 @@
 SDIR			= srcs
 
 _SRCS				=	debug.c \
+						draw.c \
+						events.c \
 						get_next_line.c \
 						get_next_line_utils.c \
 						intersect.c \

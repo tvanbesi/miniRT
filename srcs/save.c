@@ -6,7 +6,7 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 17:05:58 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/29 15:42:42 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/29 16:50:52 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static void
 	ft_write_header(int fd, t_screen *screen)
 {
 	ft_putstr_fd("BM", fd);
-	ft_putint_fd(54 + 3 * screen->width * screen->height + ((4 - (screen->width * 3) % 4) % 4) * screen->height, fd);
+	ft_putint_fd(54 + 3 * screen->width * screen->height
+	+ ((4 - (screen->width * 3) % 4) % 4) * screen->height, fd);
 	ft_putint_fd(0, fd);
 	ft_putchar_fd(54, fd);
 	ft_putchar_fd(0, fd);

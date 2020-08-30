@@ -6,11 +6,30 @@
 /*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 00:26:04 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/28 12:05:23 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/08/29 17:09:37 by thomasvanbe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+int
+	ft_parse_file(t_scene *scene, char *filename)
+{
+	int		fd;
+	int		gnl;
+	char	*line;
+
+	fd = open(filename, O_RDONLY);
+	while ((gnl = get_next_line(fd, &line)) == 1)
+	{
+		if (!ft_parse_line(line, scene) && ft_strncmp(line, "", 1))
+			return (0);
+		free(line);
+	}
+	if (gnl == -1)
+		return (0);
+	return (1);
+}
 
 int
 	ft_getobjtype(char *line)
