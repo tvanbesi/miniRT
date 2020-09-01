@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/30 15:58:19 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/01 21:42:18 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,6 +252,7 @@ int			ft_intersect(t_ray *ray, t_object *object, double *solution);
 int			ft_quadratic_eq(double coeffs[3], double *solutions);
 int			ft_ray_tracer(t_scene *scene, unsigned char *data_addr);
 int			ft_getobjtype(char *line);
+int			ft_isvalid_intendc(char *s, const char *c);
 int			ft_isvalid_int(char *s);
 int			ft_isvalid_db(char *s);
 int			ft_isvalid_rgb(char *s);
@@ -329,5 +330,6 @@ void		ft_shade_amblight(t_surf_pt *p_hit, t_object *obj, t_light *amblight);
 void		ft_mkscene(t_scene *scene);
 void		ft_selectcam(t_scene *scene, int camselect);
 void		ft_clear_images(t_scene *scene);
+// void		ft_shadray(t_ray *ray, t_scene *scene, t_surf_pt *p_hit);
 
 #endif

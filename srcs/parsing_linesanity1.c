@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_linesanity1.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 11:25:02 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/23 11:26:59 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/09/01 18:58:52 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ int
 	ft_isvalid_cam(char **a)
 {
 	if (a[1] && a[2] && a[3] && !a[4])
+	{
 		return (ft_isvalid_3db(a[1])
-				&& ft_isvalid_3db(a[2])
-				&& ft_isvalid_int(a[3]));
+			&& ft_isvalid_3db(a[2])
+			&& ft_isvalid_int(a[3]));
+	}
 	return (0);
 }
 
@@ -42,9 +44,11 @@ int
 	ft_isvalid_light(char **a)
 {
 	if (a[1] && a[2] && a[3] && !a[4])
+	{
 		return (ft_isvalid_3db(a[1])
 				&& ft_isvalid_db(a[2])
 				&& ft_isvalid_rgb(a[3]));
+	}
 	return (0);
 }
 
@@ -52,8 +56,10 @@ int
 	ft_isvalid_sphere(char **a)
 {
 	if (a[1] && a[2] && a[3] && !a[4])
+	{
 		return (ft_isvalid_3db(a[1])
 				&& ft_isvalid_db(a[2])
 				&& ft_isvalid_rgb(a[3]));
+	}
 	return (0);
 }

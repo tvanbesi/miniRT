@@ -9,13 +9,19 @@ _SRCS				=	debug.c \
 						intersect_obj2.c \
 						intersect_utils.c \
 						math.c \
-						math_vector.c \
-						matrix.c \
+						math_vector1.c \
+						math_vector2.c \
+						matrix1.c \
+						matrix2.c \
+						matrix3.c \
+						matrix4.c \
 						parsing.c \
 						parsing_linesanity1.c \
 						parsing_linesanity2.c \
-						parsing_obj.c \
-						parsing_strsanity.c \
+						parsing_obj1.c \
+						parsing_obj2.c \
+						parsing_strsanity1.c \
+						parsing_strsanity2.c \
 						ray_tracer.c \
 						save.c \
 						shade.c \

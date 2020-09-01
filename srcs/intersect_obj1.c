@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 01:37:00 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/30 16:09:06 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/01 17:59:18 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,39 +44,6 @@ int
 		l = ft_coo_sub(&object->plane.pos, &ray->pos);
 		*solution = ft_dot(&l, &object->plane.norm) / d;
 		return (*solution >= 0.0);
-	}
-	return (0);
-}
-
-int
-	ft_intersect_square(t_ray *ray, t_object *object, double *solution)
-{
-	double		d;
-	double		p[2];
-	t_coords	l;
-	t_coords	hit_to_center;
-	t_coords	tmp;
-
-	d = ft_dot(&object->square.norm, &ray->dir);
-	if (fabs(d) > 1e-6)
-	{
-		l = ft_coo_sub(&object->square.pos, &ray->pos);
-		*solution = ft_dot(&l, &object->square.norm) / d;
-		if (*solution >= 0.0)
-		{
-			tmp.x = ray->pos.x + ray->dir.x * *solution;
-			tmp.y = ray->pos.y + ray->dir.y * *solution;
-			tmp.z = ray->pos.z + ray->dir.z * *solution;
-			hit_to_center = ft_coo_sub(&tmp, &object->square.pos);
-			p[0] = ft_dot(&hit_to_center, &object->square.e1)
-			/ (object->square.height2);
-			p[1] = ft_dot(&hit_to_center, &object->square.e2)
-			/ (object->square.height2);
-			return ((p[0] >= -object->square.height2
-			&& p[0] <= object->square.height2)
-			&& (p[1] >= -object->square.height2
-			&& p[1] <= object->square.height2));
-		}
 	}
 	return (0);
 }

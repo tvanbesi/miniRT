@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 15:51:43 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/30 15:54:41 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/01 18:21:49 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int
 	int	j;
 	int	r;
 
-	i = 0;
+	i = -1;
 	r = 0;
-	while (i < 2)
+	while (++i < 2)
 	{
-		j = i + 1;
-		while (j < 3)
+		j = i;
+		while (++j < 3)
 		{
 			if ((v[i].y < 0.0 && v[j].y >= 0.0)
 			|| (v[i].y >= 0.0 && v[j].y < 0.0))
@@ -46,14 +46,10 @@ int
 					r++;
 				else if ((v[i].x >= 0.0 && v[j].x < 0.0)
 				|| (v[i].x < 0.0 && v[j].x >= 0.0))
-				{
 					if (ft_isabscissa_inter_positive(&v[i], &v[j]))
 						r++;
-				}
 			}
-			j++;
 		}
-		i++;
 	}
 	return (r);
 }
