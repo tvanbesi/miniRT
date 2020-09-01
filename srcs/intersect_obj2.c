@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 16:02:02 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 18:15:49 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 00:22:04 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static int
 {
 	object->cylinder.lastfacehit = lastfacehit;
 	*solution = solutions[lastfacehit];
+	free(solutions);
 	return (*solution > 0.0);
 }
 
