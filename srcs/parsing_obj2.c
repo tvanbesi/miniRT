@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 19:00:17 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 21:16:13 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/01 23:19:48 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,22 @@ int
 	ft_parse_cylinder(char **a, t_scene *scene)
 {
 	t_object	*obj;
-	double		height_radius[2];
+	double		hr[2];
 
 	obj = &scene->objects[scene->obj_count];
 	if (!ft_parse_coords(&obj->cylinder.pos, a[1], POS))
 		return (0);
 	if (!ft_parse_coords(&obj->cylinder.ori, a[2], ORI))
 		return (0);
-	height_radius[1] = ft_atof(a[3]) / 2.0;
-	height_radius[0] = ft_atof(a[4]);
-	if (height_radius[1] <= 0.0 || height_radius[0] <= 0.0)
+	hr[1] = ft_atof(a[3]) / 2.0;
+	hr[0] = ft_atof(a[4]);
+	if (hr[1] <= 0.0 || hr[0] <= 0.0)
 		return (0);
 	if (!ft_parse_color(&obj->cylinder.rgb, a[5]))
 		return (0);
 	obj->cylinder.color = ft_getcolor(&obj->cylinder.rgb);
 	*obj = ft_mkcylinder(obj->cylinder.pos, obj->cylinder.ori,
-	height_radius[0], height_radius[1], obj->cylinder.color);
+	hr, obj->cylinder.color);
 	scene->obj_count++;
 	return (1);
 }

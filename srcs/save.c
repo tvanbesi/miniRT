@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   save.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 17:05:58 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/29 16:50:52 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/09/01 22:42:04 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void
 }
 
 static void
-	ft_write_pmap(int fd, t_screen *screen, t_image *img) 
+	ft_write_pmap(int fd, t_screen *screen, t_image *img)
 {
 	int				x;
 	int				y;

@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   utils_sanity.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 14:26:19 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/25 15:22:11 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/09/01 23:23:25 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
 int
-    ft_isvvalid_rgb(t_color color)
+	ft_isvvalid_rgb(t_color color)
 {
-    return (color.r >= 0 && color.r <= 255
-            && color.g >= 0 && color.g <= 255
-            && color.b >= 0 && color.b <= 255);
+	return (color.r >= 0 && color.r <= 255
+			&& color.g >= 0 && color.g <= 255
+			&& color.b >= 0 && color.b <= 255);
 }
 
 int
-    ft_isvvalid_ori(t_coords ori)
+	ft_isvvalid_ori(t_coords ori)
 {
-    return (ori.x >= -1.0 && ori.x <= 1.0
-            && ori.y >= -1.0 && ori.y <= 1.0
-            && ori.z >= -1.0 && ori.z <= 1.0);
+	return (ori.x >= -1.0 && ori.x <= 1.0
+		&& ori.y >= -1.0 && ori.y <= 1.0
+		&& ori.z >= -1.0 && ori.z <= 1.0);
 }
 
 int
-    ft_isvvalid_lum(double lum)
+	ft_isvvalid_lum(double lum)
 {
-    return (lum >= 0.0 && lum <= 1.0);
+	return (lum >= 0.0 && lum <= 1.0);
 }
 
 int

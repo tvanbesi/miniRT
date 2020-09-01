@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 15:41:05 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/25 15:02:34 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/09/01 23:22:24 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

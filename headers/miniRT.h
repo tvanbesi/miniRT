@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 21:42:18 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/01 23:20:00 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,6 +222,7 @@ typedef struct	s_ray
 {
 	t_coords	pos;
 	t_coords	dir;
+	t_coords	hit;
 }				t_ray;
 
 typedef struct	s_surf_pt
@@ -305,7 +306,7 @@ t_camera	ft_mkcamera(t_coords pos, t_coords ori);
 t_object	ft_mkplane(t_coords pos, t_coords ori, int color);
 t_object	ft_mksphere(t_coords pos, double diameter, int color);
 t_object	ft_mksquare(t_coords pos, t_coords ori, double height, int color);
-t_object	ft_mkcylinder(t_coords pos, t_coords ori, double height, double radius, int color);
+t_object	ft_mkcylinder(t_coords pos, t_coords ori, double hr[2], int color);
 t_object	ft_mktriangle(t_coords *vertices, int color);
 t_light		ft_mklight(t_coords pos, int color, double lum);
 t_image		ft_mkimage(t_screen *screen);
@@ -330,6 +331,6 @@ void		ft_shade_amblight(t_surf_pt *p_hit, t_object *obj, t_light *amblight);
 void		ft_mkscene(t_scene *scene);
 void		ft_selectcam(t_scene *scene, int camselect);
 void		ft_clear_images(t_scene *scene);
-// void		ft_shadray(t_ray *ray, t_scene *scene, t_surf_pt *p_hit);
+void		ft_shadray(t_ray *ray, t_scene *scene, t_surf_pt *p_hit);
 
 #endif

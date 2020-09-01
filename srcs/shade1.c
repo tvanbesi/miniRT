@@ -1,38 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shade.c                                            :+:      :+:    :+:   */
+/*   shade1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 18:09:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/04 23:52:22 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/01 22:47:51 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
-
-void
-	ft_shade_color(t_surf_pt *p_hit, int surfcolor, t_light *light, double facing_ratio)
-{
-	t_color	rgbsurf;
-	t_color	rgblight;
-	t_color	tmp;
-
-	rgbsurf = ft_getrgb(surfcolor);
-	rgblight = ft_getrgb(light->color);
-	tmp = ft_getrgb(p_hit->color);
-	tmp.r += rgbsurf.r * facing_ratio * (double)((double)rgblight.r / 255.0) * light->lum;
-	tmp.g += rgbsurf.g * facing_ratio * (double)((double)rgblight.g / 255.0) * light->lum;
-	tmp.b += rgbsurf.b * facing_ratio * (double)((double)rgblight.b / 255.0) * light->lum;
-	if (tmp.r > 255)
-		tmp.r = 255;
-	if (tmp.g > 255)
-		tmp.g = 255;
-	if (tmp.b > 255)
-		tmp.b = 255;
-	p_hit->color = ft_getcolor(&tmp);
-}
 
 void
 	ft_shade_sphere(t_surf_pt *p_hit, t_object *obj, t_light *light)
@@ -84,7 +62,8 @@ void
 	t_ray		r;
 
 	poshit = ft_coo_sub(&p_hit->pos, &obj->cylinder.pos);
-	oridposhit2 = ft_coo_mlt(&obj->cylinder.ori, ft_dot(&obj->cylinder.ori, &poshit));
+	oridposhit2 = ft_coo_mlt(&obj->cylinder.ori,
+	ft_dot(&obj->cylinder.ori, &poshit));
 	n = ft_coo_sub(&poshit, &oridposhit2);
 	ft_normalize(&n);
 	r.dir = ft_coo_sub(&light->pos, &p_hit->pos);

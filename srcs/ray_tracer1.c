@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ray_tracer.c                                       :+:      :+:    :+:   */
+/*   ray_tracer1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:48 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/29 17:22:11 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/09/01 22:22:24 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ static t_ray
 	double	px;
 	double	py;
 	double	t;
-	
+
 	if (!(r = (t_ray*)malloc(sizeof(*r))))
 		return (NULL);
-	px = (2.0 * (((double)x - 0.5) / (double)screen->width) - 1.0) * screen->tfov2;
-	py = 1.0 - 2.0 * (((double)y - 0.5) / (double)screen->height) * screen->tfov2 * screen->aspect_ratio;
+	px = (2.0 * (((double)x - 0.5) / (double)screen->width) - 1.0)
+	* screen->tfov2;
+	py = 1.0 - 2.0 * (((double)y - 0.5) / (double)screen->height)
+	* screen->tfov2 * screen->aspect_ratio;
 	r->dir = (t_coords){px, py, 1.0};
 	ft_vec_mat_mlt(&r->dir, scene->ctw_matrix);
 	ft_normalize(&r->dir);
@@ -60,40 +62,22 @@ static void
 }
 
 static void
-	ft_shadray(t_ray *ray, t_scene *scene, t_surf_pt *p_hit)
+	ft_color_pixel(unsigned char **data_addr, int color)
 {
-	int			i;
-	int			j;
-	int			rayblocked;
-	double		d;
-	double		solution;
-	t_coords	tmp;
+	int	*p;
 
-	i = 0;
-	while (i < scene->light_count)
-	{
-		rayblocked = 0;
-		d = ft_dist(&scene->lights[i].pos, &p_hit->pos);
-		ray->dir = ft_coo_sub(&scene->lights[i].pos, &p_hit->pos);
-		ft_normalize(&ray->dir);
-		ray->pos = ft_coo_add(&p_hit->pos, &ray->dir);
-		j = 0;
-		while (j < scene->obj_count)
-		{
-			if (ft_intersect(ray, &scene->objects[j], &solution))
-			{
-				tmp.x = ray->pos.x + ray->dir.x * solution;
-				tmp.y = ray->pos.y + ray->dir.y * solution;
-				tmp.z = ray->pos.z + ray->dir.z * solution;
-				if ((rayblocked = (ft_dist(&tmp, &ray->pos) < d)))
-					break;
-			}
-			j++;
-		}
-		if (!rayblocked)
-			ft_shade(p_hit, &scene->objects[p_hit->iobj], &scene->lights[i]);
-		i++;
-	}
+	p = (int*)*data_addr;
+	*p = color;
+	*data_addr += 4;
+}
+
+static void
+	ft_ssc(t_scene *scene, t_surf_pt *p_hit,
+	unsigned char **data_addr, t_ray *ray)
+{
+	ft_shade_amblight(p_hit, &scene->objects[p_hit->iobj], &scene->amblight);
+	ft_shadray(ray, scene, p_hit);
+	ft_color_pixel(data_addr, p_hit->color);
 }
 
 int
@@ -116,13 +100,7 @@ int
 			p_hit.color = 0;
 			ft_primray(ray, scene, &p_hit);
 			if (p_hit.d_to_ori != INFINITY)
-			{
-				ft_shade_amblight(&p_hit, &scene->objects[p_hit.iobj], &scene->amblight);
-				ft_shadray(ray, scene, &p_hit);
-				p = (int*)data_addr;
-				*p = p_hit.color;
-				data_addr += 4;
-			}
+				ft_ssc(scene, &p_hit, &data_addr, ray);
 			free(ray);
 		}
 		j = 0;

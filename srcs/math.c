@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 01:56:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/03 20:52:37 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/01 23:24:25 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int
 	double	d;
 	double	q;
 
-	d =  pow(coeffs[1], 2) - 4 * coeffs[0] * coeffs[2];
+	d = pow(coeffs[1], 2) - 4 * coeffs[0] * coeffs[2];
 	if (d < 0.0)
 		return (0);
 	if (d == 0.0)
@@ -40,7 +40,8 @@ int
 	}
 	else
 	{
-		q = coeffs[1] > 0.0 ? -0.5 * (coeffs[1] + sqrt(d)) : -0.5 * (coeffs[1] - sqrt(d));
+		q = coeffs[1] > 0.0 ? -0.5 *
+		(coeffs[1] + sqrt(d)) : -0.5 * (coeffs[1] - sqrt(d));
 		solutions[0] = q / coeffs[0];
 		solutions[1] = coeffs[2] / q;
 		if (solutions[0] > solutions[1] && solutions[1] > 0.0)

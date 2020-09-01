@@ -22,10 +22,14 @@ _SRCS				=	debug.c \
 						parsing_obj2.c \
 						parsing_strsanity1.c \
 						parsing_strsanity2.c \
-						ray_tracer.c \
+						ray_tracer1.c \
+						ray_tracer2.c \
 						save.c \
-						shade.c \
-						utils.c \
+						shade1.c \
+						shade2.c \
+						utils1.c \
+						utils2.c \
+						utils3.c \
 						utils_mlx.c \
 						utils_parsing.c \
 						utils_sanity.c
