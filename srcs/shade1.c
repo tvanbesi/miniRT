@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 18:09:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 22:47:51 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 20:19:28 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void
 
 	r.dir = ft_coo_sub(&light->pos, &p_hit->pos);
 	ft_normalize(&r.dir);
+	facing_ratio = 0.0;
 	if (obj->plane.type == PLANE)
 		facing_ratio = ft_dot(&obj->plane.norm, &r.dir);
 	else if (obj->square.type == SQUARE)

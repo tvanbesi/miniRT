@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:50:46 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 23:19:41 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 20:20:03 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_object
 {
 	t_object	r;
 	t_cylinder	obj;
-	t_matrix	*m;
 	t_coords	tmp;
 
 	obj.type = CYLINDER;

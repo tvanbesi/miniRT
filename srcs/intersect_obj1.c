@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 01:37:00 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 17:59:18 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 20:16:53 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int
 	ft_intersect_triangle(t_ray *ray, t_object *object, double *solution)
 {
 	t_object	tr_plane;
-	int			smallest_dim;
 	t_coords	point;
 
 	tr_plane = ft_mkplane(object->triangle.v1,

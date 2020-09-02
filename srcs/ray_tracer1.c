@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:48 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 00:09:25 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 20:17:51 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static t_ray
 	t_ray	*r;
 	double	px;
 	double	py;
-	double	t;
 
 	if (!(r = (t_ray*)malloc(sizeof(*r))))
 		return (NULL);
@@ -87,7 +86,6 @@ int
 	int			j;
 	t_surf_pt	p_hit;
 	t_ray		*ray;
-	int			*p;
 
 	i = 0;
 	j = 0;

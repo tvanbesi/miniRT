@@ -36,8 +36,7 @@ _SRCS				=	debug.c \
 SRCS				= ${_SRCS:%=${SDIR}/%}
 OBJS				= ${_SRCS:.c=.o}
 CC					= gcc
-# CFLAGS				= -Wall -Werror -Wextra
-CFLAGS				=
+CFLAGS				= -Wall -Werror -Wextra
 INC					= -Iheaders -IminilibX -Ilibft
 LIB					= lib/
 RM					= rm -rf
