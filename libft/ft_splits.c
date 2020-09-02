@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_splits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/12 15:55:57 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/20 16:52:11 by thomasvanbe      ###   ########.fr       */
+/*   Created: 2020/09/02 21:10:22 by tvanbesi          #+#    #+#             */
+/*   Updated: 2020/09/02 21:41:14 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ static void
 	return (NULL);
 }
 
+static void
+	*ft_fr_esc(char **r, char const *s, char *str, size_t cnt)
+{
+	return (ft_fr(r - (ft_wn(s, str) - (cnt + 1)), (ft_wn(s, str) - cnt)));
+}
+
 char
 	**ft_splits(char const *s, char *str)
 {
@@ -62,17 +68,16 @@ char
 	start = 0;
 	while (cnt-- > 0)
 	{
-        while (*ps && ft_strchr(str, *ps++))
-            start++;
+		while (*ps && ft_strchr(str, *ps++))
+			start++;
 		end = start + 1;
-        while(*ps && !ft_strchr(str, *ps++))
+		while (*ps && !ft_strchr(str, *ps++))
 			end++;
 		if (!(*r = ft_substr(s, start, end - start)))
-			return (ft_fr(r - (ft_wn(s, str) - (cnt + 1)), (ft_wn(s, str) - cnt)));
+			return (ft_fr_esc(r, s, str, cnt));
 		r++;
 		start = end + 1;
 	}
 	*r = NULL;
 	return (r - ft_wn(s, str));
-	return (NULL);
 }

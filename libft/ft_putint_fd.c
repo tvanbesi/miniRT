@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putint_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 12:18:32 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/29 12:19:29 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/09/02 21:44:08 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

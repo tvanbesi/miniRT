@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 23:49:29 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/05 00:18:41 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 21:06:42 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-#define BUFFER_SIZE 4096
+# define BUFFER_SIZE 4096
 
 typedef struct		s_buf
 {

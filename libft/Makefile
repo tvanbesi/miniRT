@@ -2,7 +2,6 @@ SRCS		=	ft_atof.c \
 				ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
-				ft_freen.c \
 				ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
@@ -56,6 +55,7 @@ all :		${OBJS}
 			make ${NAME}
 ${NAME} :	${OBJS}
 			ar rc ${NAME} ${OBJS}
+			mkdir -p ../lib
 			ln -f ${NAME} ${LIB}${NAME}
 bonus :		${OBJS} ${B_OBJS}
 			ar rc ${NAME} ${OBJS} ${B_OBJS}

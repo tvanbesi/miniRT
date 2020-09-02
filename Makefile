@@ -1,6 +1,5 @@
 SDIR				=	srcs
-_SRCS				=	debug.c \
-						draw.c \
+_SRCS				=	draw.c \
 						events.c \
 						get_next_line.c \
 						get_next_line_utils.c \
@@ -51,6 +50,7 @@ ${NAME} :			${OBJS}
 					ar rc ${NAME} ${OBJS} libft/*.o
 					ln -f ${NAME} ${LIB}${NAME}
 clean :
+					cd libft && make clean
 					${RM} ${OBJS}
 fclean :			clean
 					cd libft && make clean

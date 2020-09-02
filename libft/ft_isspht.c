@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ispsht.c                                        :+:      :+:    :+:   */
+/*   ft_isspht.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 16:56:13 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/22 16:58:35 by thomasvanbe      ###   ########.fr       */
+/*   Updated: 2020/09/02 21:46:36 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int
-    ft_isspht(int c)
+	ft_isspht(int c)
 {
-    return (c == ' ' || c == '\t');
+	return (c == ' ' || c == '\t');
 }

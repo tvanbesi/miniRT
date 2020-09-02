@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomasvanbesien <thomasvanbesien@studen    +#+  +:+       +#+        */
+/*   By: tvanbesi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 16:47:37 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/29 12:23:59 by thomasvanbe      ###   ########.fr       */
+/*   Created: 2020/09/02 21:07:23 by tvanbesi          #+#    #+#             */
+/*   Updated: 2020/09/02 21:08:23 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
-char    **ft_splits(char const *s, char *str);
-double  ft_atof(char *str);
-double  ft_pow(double x, int y);
+char	**ft_splits(char const *s, char *str);
+double	ft_atof(char *str);
+double	ft_pow(double x, int y);
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
-int     ft_isspace(int c);
-int     ft_isspht(int c);
+int		ft_isspace(int c);
+int		ft_isspht(int c);
 int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -60,6 +60,6 @@ void	*ft_freen(void *p);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putnstr(char *s, size_t n);
-void    ft_splitf(char **a);
+void	ft_splitf(char **a);
 
 #endif
