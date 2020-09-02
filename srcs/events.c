@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 17:19:10 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/30 16:16:09 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:27:47 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_close(void)

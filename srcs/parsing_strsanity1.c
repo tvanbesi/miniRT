@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 18:09:36 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/01 19:08:17 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:10 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_isvalid_int(char *s)

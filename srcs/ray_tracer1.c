@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:48 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 20:17:51 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:17 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 static t_ray
 	*ft_mkray(t_screen *screen, t_scene *scene, int x, int y)

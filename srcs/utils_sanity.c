@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 14:26:19 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/01 23:23:25 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:46 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_isvvalid_rgb(t_color color)

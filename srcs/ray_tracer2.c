@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:12:46 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 00:37:18 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:22 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 static t_coords
 	ft_coords_from_ray(t_ray *ray, double solution)

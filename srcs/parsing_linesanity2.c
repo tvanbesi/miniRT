@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 11:26:43 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/01 18:59:35 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:58 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_isvalid_plane(char **a)

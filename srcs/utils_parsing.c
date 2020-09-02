@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 15:41:05 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/01 23:22:24 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:42 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_parse_color(t_color *color, const char *s)

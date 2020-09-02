@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 19:06:52 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 19:09:30 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:14 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 static int
 	ft_isvalid_dbendc(char *s, const char *c)

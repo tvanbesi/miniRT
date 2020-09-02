@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:38:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 18:44:47 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:42 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 t_matrix
 	*ft_mat_adj(t_matrix *m)

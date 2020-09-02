@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 19:00:17 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 23:19:48 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:07 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_parse_plane(char **a, t_scene *scene)

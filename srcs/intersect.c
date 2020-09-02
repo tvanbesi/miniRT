@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 15:55:14 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/08/30 15:55:28 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:27:56 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_intersect(t_ray *ray, t_object *object, double *solution)

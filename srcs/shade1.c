@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 18:09:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 20:19:28 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:31 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 void
 	ft_shade_sphere(t_surf_pt *p_hit, t_object *obj, t_light *light)

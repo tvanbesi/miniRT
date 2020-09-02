@@ -53,7 +53,7 @@ clean :
 					cd libft && make clean
 					${RM} ${OBJS}
 fclean :			clean
-					cd libft && make clean
+					cd libft && make fclean
 					${RM} ${NAME}
 					${RM} ${LIB}${NAME} ${LIB}libft.a
 re :				fclean

@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 13:11:15 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/01 19:02:29 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:03 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_parse_res(char **a, t_scene *scene)

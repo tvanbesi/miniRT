@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:47:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 18:51:04 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:45 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 static void
 	ft_mat_det_norme(double *r, t_matrix *m)

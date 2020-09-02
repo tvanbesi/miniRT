@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 16:02:02 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 00:22:04 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:30:49 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 static t_ray
 	ft_ray_rotate(t_ray *ray, t_object *object)
@@ -20,8 +20,8 @@ static t_ray
 	t_matrix	*sr;
 
 	raytrs = *ray;
-	sr = ft_mat_mlt(&object->cylinder.Si, &object->cylinder.Ri);
-	srt = ft_mat_mlt(sr, &object->cylinder.Ti);
+	sr = ft_mat_mlt(&object->cylinder.si, &object->cylinder.ri);
+	srt = ft_mat_mlt(sr, &object->cylinder.ti);
 	ft_vec_mat_mlt(&raytrs.pos, srt);
 	ft_vec_mat_mlt(&raytrs.dir, sr);
 	return (raytrs);

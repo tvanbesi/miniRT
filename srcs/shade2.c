@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:47:31 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 22:47:48 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:35 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 void
 	ft_shade_color(t_surf_pt *p_hit, int surfcolor,

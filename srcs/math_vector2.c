@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:23:31 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 18:25:23 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:31 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 double
 	ft_dist(t_coords *a, t_coords *b)

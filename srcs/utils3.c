@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:50:46 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 20:20:03 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:31:26 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 t_object
 	ft_mksphere(t_coords pos, double diameter, int color)
@@ -38,16 +38,16 @@ t_object
 	obj.height = hr[0];
 	obj.color = color;
 	obj.pos = pos;
-	obj.Ri = *ft_mat_rot(&ori);
+	obj.ri = *ft_mat_rot(&ori);
 	tmp = (t_coords){0.0, 0.0, 1.0};
-	ft_vec_mat_mlt(&tmp, &obj.Ri);
+	ft_vec_mat_mlt(&tmp, &obj.ri);
 	obj.ori = tmp;
 	ft_normalize(&obj.ori);
-	obj.Ri = *ft_mat_inv(&obj.Ri);
-	obj.Ti = *ft_mat_trans(&pos);
-	obj.Ti = *ft_mat_inv(&obj.Ti);
-	obj.Si = *ft_mat_scal(&(t_coords){hr[1], hr[1], 1.0});
-	obj.Si = *ft_mat_inv(&obj.Si);
+	obj.ri = *ft_mat_inv(&obj.ri);
+	obj.ti = *ft_mat_trans(&pos);
+	obj.ti = *ft_mat_inv(&obj.ti);
+	obj.si = *ft_mat_scal(&(t_coords){hr[1], hr[1], 1.0});
+	obj.si = *ft_mat_inv(&obj.si);
 	r.cylinder = obj;
 	return (r);
 }

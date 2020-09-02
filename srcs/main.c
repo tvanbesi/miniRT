@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 21:28:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 23:23:57 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:15 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 static int
 	ft_save(t_scene *scene, char *filename)

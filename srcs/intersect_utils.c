@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 15:51:43 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 18:21:49 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:11 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_isabscissa_inter_positive(t_coords *p1, t_coords *p2)

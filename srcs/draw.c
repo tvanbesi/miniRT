@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 17:16:45 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/08/30 15:48:49 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:27:44 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_draw_image(t_scene *scene, int camselect)

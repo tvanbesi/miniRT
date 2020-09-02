@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 01:37:00 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 20:16:53 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:00 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 int
 	ft_intersect_sphere(t_ray *ray, t_object *object, double *solution)

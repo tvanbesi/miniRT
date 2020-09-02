@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:49:40 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 22:49:49 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:53 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 void
 	ft_swap_double(double *a, double *b)

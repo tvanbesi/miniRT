@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 17:05:58 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/01 22:42:04 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:27 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 static void
 	ft_write_header(int fd, t_screen *screen)

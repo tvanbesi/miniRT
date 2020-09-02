@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:39:03 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 18:48:22 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:38 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 t_matrix
 	*ft_mat_rotx(double a)

@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 02:27:24 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/01 22:51:04 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:49 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 t_object
 	ft_mkplane(t_coords pos, t_coords ori, int color)

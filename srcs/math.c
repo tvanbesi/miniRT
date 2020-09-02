@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 01:56:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 00:20:17 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:28:20 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 t_coords_cp
 	ft_rectocp(t_coords rec)

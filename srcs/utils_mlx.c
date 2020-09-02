@@ -6,11 +6,11 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 22:37:13 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/01 23:22:08 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/02 22:29:38 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "miniRT.h"
+#include "minirt.h"
 
 t_image
 	ft_mkimage(t_screen *screen)
