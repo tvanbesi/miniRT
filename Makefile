@@ -55,6 +55,7 @@ clean :
 fclean :			clean
 					cd libft && make clean
 					${RM} ${NAME}
+					${RM} ${LIB}${NAME} ${LIB}libft.a
 re :				fclean
 					cd libft && make re
 					make all
