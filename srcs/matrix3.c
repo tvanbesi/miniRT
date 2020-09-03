@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 18:38:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 22:28:42 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 03:15:26 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,9 @@ t_matrix
 	int			i;
 	int			j;
 
-	if (!(r = (t_matrix*)malloc(sizeof(*r))))
-		return (NULL);
 	det = 1.0 / ft_mat_det(m);
 	r = ft_mat_adj(m);
+	free(m);
 	i = 0;
 	while (i < 4)
 	{
@@ -65,36 +64,37 @@ t_matrix
 }
 
 static void
-	*ft_mat_free(t_matrix *mx, t_matrix *my, t_matrix *mz, t_matrix *r)
+	*ft_mat_free(t_matrix *m[5])
 {
-	free(mx);
-	free(my);
-	free(mz);
-	free(r);
+	int	i;
+
+	i = 0;
+	while (i++ < 5)
+		free(m[i]);
 	return (NULL);
 }
 
 t_matrix
 	*ft_mat_rot(t_coords *c)
 {
-	t_matrix	*mx;
-	t_matrix	*my;
-	t_matrix	*mz;
-	t_matrix	*r;
+	t_matrix	*m[5];
+	int			i;
 
-	my = NULL;
-	mz = NULL;
-	r = NULL;
-	if (!(mx = ft_mat_rotx(c->x * M_PI)))
-		return (NULL);
-	if (!(my = ft_mat_roty(c->y * M_PI)))
-		return (ft_mat_free(mx, my, mz, r));
-	if (!(mz = ft_mat_rotz(c->z * M_PI)))
-		return (ft_mat_free(mx, my, mz, r));
-	if (!(r = ft_mat_mlt(ft_mat_mlt(mx, my), mz)))
-		return (ft_mat_free(mx, my, mz, r));
-	free(mx);
-	free(my);
-	free(mz);
-	return (r);
+	i = 0;
+	while (i++ < 5)
+		m[i - 1] = NULL;
+	if (!(m[0] = ft_mat_rotx(c->x * M_PI)))
+		return (ft_mat_free(m));
+	if (!(m[1] = ft_mat_roty(c->y * M_PI)))
+		return (ft_mat_free(m));
+	if (!(m[2] = ft_mat_rotz(c->z * M_PI)))
+		return (ft_mat_free(m));
+	if (!(m[3] = ft_mat_mlt(m[0], m[1])))
+		return (ft_mat_free(m));
+	if (!(m[4] = ft_mat_mlt(m[3], m[2])))
+		return (ft_mat_free(m));
+	i = 0;
+	while (i++ < 4)
+		free(m[i - 1]);
+	return (m[4]);
 }

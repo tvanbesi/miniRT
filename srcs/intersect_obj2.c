@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 16:02:02 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 22:30:49 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 03:53:13 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ static t_ray
 	t_matrix	*sr;
 
 	raytrs = *ray;
-	sr = ft_mat_mlt(&object->cylinder.si, &object->cylinder.ri);
-	srt = ft_mat_mlt(sr, &object->cylinder.ti);
+	sr = ft_mat_mlt(object->cylinder.si, object->cylinder.ri);
+	srt = ft_mat_mlt(sr, object->cylinder.ti);
 	ft_vec_mat_mlt(&raytrs.pos, srt);
 	ft_vec_mat_mlt(&raytrs.dir, sr);
+	free(sr);
+	free(srt);
 	return (raytrs);
 }
 
@@ -61,6 +63,7 @@ int
 		&& z[1] < object->cylinder.height)
 			return (ft_cylinder_solution(solutions, solution, object, 1));
 	}
+	// printf("%p\n", solutions);
 	free(solutions);
 	return (0);
 }

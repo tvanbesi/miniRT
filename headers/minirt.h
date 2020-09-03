@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 22:25:22 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 03:10:18 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "libft.h"
+
+# include <stdio.h>
 
 # define MAX_OBJECTS 100
 # define MAX_LIGHTS 10
@@ -120,9 +122,9 @@ typedef struct	s_sphere
 typedef struct	s_cylinder
 {
 	int			type;
-	t_matrix	ti;
-	t_matrix	ri;
-	t_matrix	si;
+	t_matrix	*ti;
+	t_matrix	*ri;
+	t_matrix	*si;
 	t_coords	pos;
 	t_coords	ori;
 	double		radius;

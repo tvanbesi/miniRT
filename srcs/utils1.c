@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 02:27:24 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 22:29:49 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 03:19:51 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void
 	scene->obj_count = 0;
 	scene->res_set = 0;
 	scene->amb_set = 0;
+	scene->ctw_matrix = NULL;
 }
 
 void
@@ -96,5 +97,6 @@ void
 	scene->camselect = camselect;
 	scene->screen.tfov2 = tan((double)scene->cameras[camselect].fov
 	/ 2.0 * M_PI / 180);
+	free(scene->ctw_matrix);
 	scene->ctw_matrix = ft_mat_rot(&scene->cameras[camselect].ori);
 }
