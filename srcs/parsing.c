@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 00:26:04 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 03:04:20 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 04:47:57 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int
 	char	*line;
 
 	fd = open(filename, O_RDONLY);
+	if (read(fd, NULL, 0) == 0)
+		return (0);
 	while ((gnl = get_next_line(fd, &line)) == 1)
 	{
 		if (!ft_parse_line(line, scene) && ft_strncmp(line, "", 1))

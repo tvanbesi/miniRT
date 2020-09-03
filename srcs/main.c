@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 21:28:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 04:06:47 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 04:38:02 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@ static int
 static int
 	ft_run(t_scene *scene, char *filename)
 {
+	int	size_filename;
+
+	size_filename = ft_strlen(filename);
+	if (filename[size_filename - 3] != '.'
+	|| filename[size_filename - 2] != 'r'
+	|| filename[size_filename - 1] != 't')
+		return (0);
 	if (!ft_parse_file(scene, filename))
 		return (0);
 	if (!ft_draw_all_images(scene))
