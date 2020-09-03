@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 16:02:02 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 03:53:13 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 03:57:48 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int
 		&& z[1] < object->cylinder.height)
 			return (ft_cylinder_solution(solutions, solution, object, 1));
 	}
-	// printf("%p\n", solutions);
 	free(solutions);
 	return (0);
 }

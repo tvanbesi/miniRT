@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 01:37:00 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 22:28:00 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 04:03:53 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int
 	if (!(solutions = (double*)malloc(sizeof(double) * 2)))
 		return (0);
 	if (!ft_quadratic_eq(coeffs, solutions))
+	{
+		free(solutions);
 		return (0);
+	}
 	*solution = (solutions[0] > 0.0) ? solutions[0] : solutions[1];
 	free(solutions);
 	return (*solution > 0.0);
