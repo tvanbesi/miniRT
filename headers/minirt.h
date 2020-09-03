@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 03:10:18 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 04:06:59 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -286,7 +286,7 @@ int				ft_parse_file(t_scene *scene, char *filename);
 int				ft_screenshot(t_scene *scene, char *filename);
 int				ft_draw_image(t_scene *scene, int camselect);
 int				ft_draw_all_images(t_scene *scene);
-int				ft_close(void);
+int				ft_close(void *param);
 int				ft_key_hook(int keycode, void *param);
 int				ft_isqnscissq_inter_positive(t_coords *p1, t_coords *p2);
 int				ft_oddeven_vertices_test(t_coords v[3]);

@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:48 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 04:04:08 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 04:09:04 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ static void
 	{
 		if (ft_intersect(ray, &scene->objects[i], &solution))
 		{
-			// printf("%pap\n");
-			// while (1)
-			// 	;
 			tmp.x = ray->pos.x + ray->dir.x * solution;
 			tmp.y = ray->pos.y + ray->dir.y * solution;
 			tmp.z = ray->pos.z + ray->dir.z * solution;

@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 21:28:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 04:05:02 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 04:06:47 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int
 	if (!ft_draw_all_images(scene))
 		return (0);
 	mlx_key_hook(scene->screen.window, ft_key_hook, scene);
-	mlx_hook(scene->screen.window, 17, 0, ft_close, NULL);
+	mlx_hook(scene->screen.window, 17, 0, ft_close, scene);
 	mlx_loop(scene->screen.mlx);
 	return (1);
 }
