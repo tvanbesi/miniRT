@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:47:31 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 16:43:15 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 16:48:04 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,34 @@ void
 	tmp.g = tmp.g > 255 ? 255 : tmp.g;
 	tmp.b = tmp.b > 255 ? 255 : tmp.b;
 	p_hit->color = ft_getcolor(&tmp);
+}
+
+void
+	ft_shade(t_surf_pt *p_hit, t_object *obj, t_light *light)
+{
+	if (obj->sphere.type == SPHERE)
+		ft_shade_sphere(p_hit, obj, light);
+	else if (obj->plane.type == PLANE)
+		ft_shade_flatsurf(p_hit, obj, light);
+	else if (obj->sphere.type == SQUARE)
+		ft_shade_flatsurf(p_hit, obj, light);
+	else if (obj->cylinder.type == CYLINDER)
+		ft_shade_cylinder(p_hit, obj, light);
+	else if (obj->triangle.type == TRIANGLE)
+		ft_shade_flatsurf(p_hit, obj, light);
+}
+
+void
+	ft_shade_amblight(t_surf_pt *p_hit, t_object *obj, t_light *amblight)
+{
+	if (obj->plane.type == PLANE)
+		ft_shade_color(p_hit, obj->plane.color, amblight, 1.0);
+	else if (obj->plane.type == CYLINDER)
+		ft_shade_color(p_hit, obj->cylinder.color, amblight, 1.0);
+	else if (obj->plane.type == TRIANGLE)
+		ft_shade_color(p_hit, obj->triangle.color, amblight, 1.0);
+	else if (obj->plane.type == SPHERE)
+		ft_shade_color(p_hit, obj->sphere.color, amblight, 1.0);
+	else if (obj->plane.type == SQUARE)
+		ft_shade_color(p_hit, obj->square.color, amblight, 1.0);
 }

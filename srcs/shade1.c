@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 18:09:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 15:44:38 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 16:50:14 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ void
 }
 
 void
+	ft_handle_light_inside(t_coords *n, t_object *o, t_ray *r, t_light *light, double *fr)
+{
+	
+}
+
+void
 	ft_shade_cylinder(t_surf_pt *p_hit, t_object *obj, t_light *light)
 {
 	t_coords	n;
@@ -85,34 +91,4 @@ void
 		facing_ratio = -facing_ratio;
 	if (facing_ratio > 0.0)
 		ft_shade_color(p_hit, obj->cylinder.color, light, facing_ratio);
-}
-
-void
-	ft_shade(t_surf_pt *p_hit, t_object *obj, t_light *light)
-{
-	if (obj->sphere.type == SPHERE)
-		ft_shade_sphere(p_hit, obj, light);
-	else if (obj->plane.type == PLANE)
-		ft_shade_flatsurf(p_hit, obj, light);
-	else if (obj->sphere.type == SQUARE)
-		ft_shade_flatsurf(p_hit, obj, light);
-	else if (obj->cylinder.type == CYLINDER)
-		ft_shade_cylinder(p_hit, obj, light);
-	else if (obj->triangle.type == TRIANGLE)
-		ft_shade_flatsurf(p_hit, obj, light);
-}
-
-void
-	ft_shade_amblight(t_surf_pt *p_hit, t_object *obj, t_light *amblight)
-{
-	if (obj->plane.type == PLANE)
-		ft_shade_color(p_hit, obj->plane.color, amblight, 1.0);
-	else if (obj->plane.type == CYLINDER)
-		ft_shade_color(p_hit, obj->cylinder.color, amblight, 1.0);
-	else if (obj->plane.type == TRIANGLE)
-		ft_shade_color(p_hit, obj->triangle.color, amblight, 1.0);
-	else if (obj->plane.type == SPHERE)
-		ft_shade_color(p_hit, obj->sphere.color, amblight, 1.0);
-	else if (obj->plane.type == SQUARE)
-		ft_shade_color(p_hit, obj->square.color, amblight, 1.0);
 }

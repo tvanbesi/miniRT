@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:12:46 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 13:27:00 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 16:46:59 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ void
 	int			rayblocked;
 	double		d;
 	double		solution;
-	t_ray		primay;
 
 	i = -1;
-	primay = *ray;
 	while (++i < scene->light_count)
 	{
 		rayblocked = 0;

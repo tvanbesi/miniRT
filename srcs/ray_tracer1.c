@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:48 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 16:40:30 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 16:47:08 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ int
 	{
 		while (j++ < scene->screen.width)
 		{
-			// while (j == 500 && i == 200)
-			// 	;
 			if (!(ray = ft_mkray(&scene->screen, scene, j, i)))
 				return (0);
 			p_hit.color = 0.0;

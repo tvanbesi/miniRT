@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 16:02:02 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 15:37:12 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 16:46:16 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ int
 		z[0] = raytrs.pos.z + raytrs.dir.z * solutions[0];
 		z[1] = raytrs.pos.z + raytrs.dir.z * solutions[1];
 		if (solutions[0] > 0.0 && z[0] > 0.0 && z[0] < object->cylinder.height)
-			return (ft_cylinder_solution(solutions, solution, object, EXTERIOR));
+			return (ft_cylinder_solution(solutions, solution, object, 0));
 		else if (solutions[1] > 0.0 && z[1] > 0.0
 		&& z[1] < object->cylinder.height)
-			return (ft_cylinder_solution(solutions, solution, object, INTERIOR));
+			return (ft_cylinder_solution(solutions, solution, object, 1));
 	}
 	free(solutions);
 	return (0);
