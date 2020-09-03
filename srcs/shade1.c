@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 18:09:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/02 22:29:31 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 15:44:38 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,10 @@ void
 	double		facing_ratio;
 	t_ray		r;
 
+	t_coords	tmpn;
+	t_coords	tmptol;
+	double p = ft_dot(&tmpn, &tmptol) / sqrt(ft_dot(&tmpn, &tmpn));
+
 	poshit = ft_coo_sub(&p_hit->pos, &obj->cylinder.pos);
 	oridposhit2 = ft_coo_mlt(&obj->cylinder.ori,
 	ft_dot(&obj->cylinder.ori, &poshit));
@@ -70,9 +74,17 @@ void
 	r.dir = ft_coo_sub(&light->pos, &p_hit->pos);
 	ft_normalize(&r.dir);
 	facing_ratio = ft_dot(&n, &r.dir);
-	if (obj->cylinder.lastfacehit == INTERIOR)
+
+	tmpn = (t_coords){-n.x * obj->cylinder.diameter, -n.y * obj->cylinder.diameter, -n.z * obj->cylinder.diameter};
+	tmptol = ft_coo_sub(&light->pos, &p_hit->pos);
+	if (obj->cylinder.facehit == INTERIOR && facing_ratio < 0.0 && p > 0.0 && p < obj->cylinder.diameter)
 		facing_ratio = -facing_ratio;
-	ft_shade_color(p_hit, obj->cylinder.color, light, facing_ratio);
+	else if (obj->cylinder.facehit == EXTERIOR && facing_ratio < 0.0 && p > 0.0 && p < obj->cylinder.diameter)
+		;
+	else if (obj->cylinder.facehit == INTERIOR)
+		facing_ratio = -facing_ratio;
+	if (facing_ratio > 0.0)
+		ft_shade_color(p_hit, obj->cylinder.color, light, facing_ratio);
 }
 
 void

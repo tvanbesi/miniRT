@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 16:02:02 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 03:57:48 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 15:37:12 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ static t_ray
 
 static int
 	ft_cylinder_solution(double *solutions, double *solution,
-	t_object *object, int lastfacehit)
+	t_object *object, int facehit)
 {
-	object->cylinder.lastfacehit = lastfacehit;
-	*solution = solutions[lastfacehit];
+	if (!object->cylinder.setfacehit)
+		object->cylinder.facehit = facehit;
+	*solution = solutions[facehit];
 	free(solutions);
 	return (*solution > 0.0);
 }
@@ -58,10 +59,10 @@ int
 		z[0] = raytrs.pos.z + raytrs.dir.z * solutions[0];
 		z[1] = raytrs.pos.z + raytrs.dir.z * solutions[1];
 		if (solutions[0] > 0.0 && z[0] > 0.0 && z[0] < object->cylinder.height)
-			return (ft_cylinder_solution(solutions, solution, object, 0));
+			return (ft_cylinder_solution(solutions, solution, object, EXTERIOR));
 		else if (solutions[1] > 0.0 && z[1] > 0.0
 		&& z[1] < object->cylinder.height)
-			return (ft_cylinder_solution(solutions, solution, object, 1));
+			return (ft_cylinder_solution(solutions, solution, object, INTERIOR));
 	}
 	free(solutions);
 	return (0);

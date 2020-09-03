@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 04:59:12 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 16:40:42 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "libft.h"
+
+#include <stdio.h>
 
 # define MAX_OBJECTS 100
 # define MAX_LIGHTS 10
@@ -57,8 +59,8 @@ typedef enum	e_dimensions
 
 typedef enum	e_faces
 {
-	INTERIOR,
-	EXTERIOR
+	EXTERIOR,
+	INTERIOR
 }				t_faces;
 
 typedef struct	s_matrix3
@@ -125,11 +127,12 @@ typedef struct	s_cylinder
 	t_matrix	*si;
 	t_coords	pos;
 	t_coords	ori;
-	double		radius;
+	double		diameter;
 	double		height;
 	t_color		rgb;
 	int			color;
-	int			lastfacehit;
+	int			setfacehit;
+	int			facehit;
 }				t_cylinder;
 
 typedef struct	s_plane

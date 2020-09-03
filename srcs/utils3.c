@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:50:46 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 03:15:41 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 15:29:27 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ t_object
 	t_coords	tmp;
 
 	obj.type = CYLINDER;
+	obj.setfacehit = 0;
 	obj.height = hr[0];
+	obj.diameter = hr[1] * 2.0;
 	obj.color = color;
 	obj.pos = pos;
 	obj.ri = ft_mat_rot(&ori);
