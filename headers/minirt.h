@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 04:06:59 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/03 04:59:12 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "libft.h"
-
-# include <stdio.h>
 
 # define MAX_OBJECTS 100
 # define MAX_LIGHTS 10
