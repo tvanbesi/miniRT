@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:50:46 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 15:29:27 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 12:58:57 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,18 @@ t_object
 	obj.si = ft_mat_inv(obj.si);
 	r.cylinder = obj;
 	return (r);
+}
+
+void
+	ft_clear_objects(t_scene *scene)
+{
+	while (scene->obj_count-- > 0)
+	{
+		if (scene->objects[scene->obj_count].cylinder.type == CYLINDER)
+		{
+			free(scene->objects[scene->obj_count].cylinder.ri);
+			free(scene->objects[scene->obj_count].cylinder.ti);
+			free(scene->objects[scene->obj_count].cylinder.si);
+		}
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 00:26:04 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 04:58:31 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 12:47:10 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int
 		free(line);
 	}
 	if (gnl == -1)
+		return (0);
+	if (!scene->res_set || !scene->amb_set)
 		return (0);
 	return (1);
 }

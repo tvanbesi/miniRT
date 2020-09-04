@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/29 17:19:10 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/03 04:08:26 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 13:02:27 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int
 
 	scene = (t_scene*)param;
 	ft_clear_images(scene);
-	mlx_destroy_window(scene->screen.mlx, scene->screen.window);
+	ft_clear_objects(scene);
+	if (scene->screen.mlx && scene->screen.window)
+		mlx_destroy_window(scene->screen.mlx, scene->screen.window);
 	exit(0);
 }
 

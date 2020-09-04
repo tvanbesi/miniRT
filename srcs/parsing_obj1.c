@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 13:11:15 by thomasvanbe       #+#    #+#             */
-/*   Updated: 2020/09/02 22:29:03 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 12:35:57 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int
 {
 	t_camera	*cam;
 
+	if (scene->cam_count >= MAX_CAMERAS)
+		return (0);
 	cam = &scene->cameras[scene->cam_count];
 	if (!ft_parse_coords(&cam->pos, a[1], POS))
 		return (0);
@@ -78,6 +80,8 @@ int
 {
 	t_light	*light;
 
+	if (scene->light_count > MAX_LIGHTS)
+		return (0);
 	light = &scene->lights[scene->light_count];
 	if (!ft_parse_coords(&light->pos, a[1], POS))
 		return (0);
@@ -96,6 +100,8 @@ int
 {
 	t_object	*obj;
 
+	if (scene->obj_count >= MAX_OBJECTS)
+		return (0);
 	obj = &scene->objects[scene->obj_count];
 	if (!ft_parse_coords(&obj->sphere.pos, a[1], POS))
 		return (0);

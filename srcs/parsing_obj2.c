@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 19:00:17 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 02:32:20 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 12:36:19 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int
 {
 	t_object	*obj;
 
+	if (scene->obj_count >= MAX_OBJECTS)
+		return (0);
 	obj = &scene->objects[scene->obj_count];
 	if (!ft_parse_coords(&obj->plane.pos, a[1], POS))
 		return (0);
@@ -35,6 +37,8 @@ int
 {
 	t_object	*obj;
 
+	if (scene->obj_count >= MAX_OBJECTS)
+		return (0);
 	obj = &scene->objects[scene->obj_count];
 	if (!ft_parse_coords(&obj->square.pos, a[1], POS))
 		return (0);
@@ -58,6 +62,8 @@ int
 	t_object	*obj;
 	double		hr[2];
 
+	if (scene->obj_count >= MAX_OBJECTS)
+		return (0);
 	obj = &scene->objects[scene->obj_count];
 	if (!ft_parse_coords(&obj->cylinder.pos, a[1], POS))
 		return (0);
@@ -82,6 +88,8 @@ int
 	t_object	*obj;
 	t_coords	v[3];
 
+	if (scene->obj_count >= MAX_OBJECTS)
+		return (0);
 	obj = &scene->objects[scene->obj_count];
 	if (!ft_parse_coords(&obj->triangle.v1, a[1], POS))
 		return (0);

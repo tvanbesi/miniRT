@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 21:32:55 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 16:40:42 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 12:59:18 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "libft.h"
-
-#include <stdio.h>
 
 # define MAX_OBJECTS 100
 # define MAX_LIGHTS 10
@@ -343,5 +341,6 @@ void			ft_mkscene(t_scene *scene);
 void			ft_selectcam(t_scene *scene, int camselect);
 void			ft_clear_images(t_scene *scene);
 void			ft_shadray(t_ray *ray, t_scene *scene, t_surf_pt *p_hit);
+void			ft_clear_objects(t_scene *scene);
 
 #endif

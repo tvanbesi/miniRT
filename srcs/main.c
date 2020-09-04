@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 21:28:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 04:56:39 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 13:00:45 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static int
 		return (0);
 	if (!ft_screenshot(scene, "screenshot.bmp"))
 		return (0);
+	ft_close(scene);
 	return (1);
 }
 
@@ -54,8 +55,12 @@ int
 
 	ft_mkscene(&scene);
 	if (argc == 2)
-		return (ft_run(&scene, argv[1]));
+	{
+		if (!ft_run(&scene, argv[1]))
+			ft_close(&scene);
+	}
 	else if (argc == 3 && !ft_strncmp(argv[2], "-save", ft_strlen(argv[2])))
-		return (ft_save(&scene, argv[1]));
+		if (!ft_save(&scene, argv[1]))
+			ft_close(&scene);
 	return (0);
 }
