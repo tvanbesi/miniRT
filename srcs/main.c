@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 21:28:57 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/04 13:00:45 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 15:49:33 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int
 	int	size_filename;
 
 	size_filename = ft_strlen(filename);
+	if (size_filename <= 3)
+		return (0);
 	if (filename[size_filename - 3] != '.'
 	|| filename[size_filename - 2] != 'r'
 	|| filename[size_filename - 1] != 't')
