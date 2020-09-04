@@ -6,7 +6,7 @@
 /*   By: tvanbesi <tvanbesi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 18:09:30 by tvanbesi          #+#    #+#             */
-/*   Updated: 2020/09/03 16:50:14 by tvanbesi         ###   ########.fr       */
+/*   Updated: 2020/09/04 12:18:24 by tvanbesi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,33 @@ void
 		ft_shade_color(p_hit, obj->triangle.color, light, facing_ratio);
 }
 
-void
-	ft_handle_light_inside(t_coords *n, t_object *o, t_ray *r, t_light *light, double *fr)
+static double
+	ft_facing_ratio(t_coords *n, t_cylinder *c, t_ray *r, t_light *light)
 {
-	
+	t_coords	tmpn;
+	t_coords	tmptol;
+	double		p;
+	double		facing_ratio;
+
+	tmpn = ft_coo_mlt(n, -c->diameter);
+	tmptol = ft_coo_sub(&light->pos, &r->dir);
+	p = ft_dot(&tmpn, &tmptol) / sqrt(ft_dot(&tmpn, &tmpn));
+	ft_normalize(&r->dir);
+	facing_ratio = ft_dot(&r->dir, n);
+	if (c->facehit == INTERIOR && facing_ratio < 0.0
+	&& p > 0.0 && p < c->diameter)
+	{
+		return (-facing_ratio);
+	}
+	else if (c->facehit == EXTERIOR && facing_ratio < 0.0
+	&& p > 0.0 && p < c->diameter)
+	{
+		return (facing_ratio);
+	}
+	else if (c->facehit == INTERIOR)
+		return (-facing_ratio);
+	else
+		return (facing_ratio);
 }
 
 void
@@ -68,27 +91,13 @@ void
 	double		facing_ratio;
 	t_ray		r;
 
-	t_coords	tmpn;
-	t_coords	tmptol;
-	double p = ft_dot(&tmpn, &tmptol) / sqrt(ft_dot(&tmpn, &tmpn));
-
 	poshit = ft_coo_sub(&p_hit->pos, &obj->cylinder.pos);
 	oridposhit2 = ft_coo_mlt(&obj->cylinder.ori,
 	ft_dot(&obj->cylinder.ori, &poshit));
 	n = ft_coo_sub(&poshit, &oridposhit2);
 	ft_normalize(&n);
 	r.dir = ft_coo_sub(&light->pos, &p_hit->pos);
-	ft_normalize(&r.dir);
-	facing_ratio = ft_dot(&n, &r.dir);
-
-	tmpn = (t_coords){-n.x * obj->cylinder.diameter, -n.y * obj->cylinder.diameter, -n.z * obj->cylinder.diameter};
-	tmptol = ft_coo_sub(&light->pos, &p_hit->pos);
-	if (obj->cylinder.facehit == INTERIOR && facing_ratio < 0.0 && p > 0.0 && p < obj->cylinder.diameter)
-		facing_ratio = -facing_ratio;
-	else if (obj->cylinder.facehit == EXTERIOR && facing_ratio < 0.0 && p > 0.0 && p < obj->cylinder.diameter)
-		;
-	else if (obj->cylinder.facehit == INTERIOR)
-		facing_ratio = -facing_ratio;
+	facing_ratio = ft_facing_ratio(&n, &obj->cylinder, &r, light);
 	if (facing_ratio > 0.0)
 		ft_shade_color(p_hit, obj->cylinder.color, light, facing_ratio);
 }
