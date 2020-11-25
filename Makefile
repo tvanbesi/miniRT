@@ -34,7 +34,7 @@ _SRCS				=	draw.c \
 						utils_sanity.c
 SRCS				= ${_SRCS:%=${SDIR}/%}
 OBJS				= ${_SRCS:.c=.o}
-CC					= gcc
+CC					= clang
 CFLAGS				= -Wall -Werror -Wextra
 INC					= -Iheaders -IminilibX -Ilibft
 LIB					= lib/

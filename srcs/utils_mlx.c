@@ -29,7 +29,10 @@ t_image
 void
 	ft_clear_images(t_scene *scene)
 {
-	while (scene->cam_count-- > 0)
-		mlx_destroy_image(scene->screen.mlx,
-		scene->images[scene->cam_count].ptr);
+	if (scene->images[scene->cam_count - 1].ptr != NULL)
+	{
+		while (scene->cam_count-- > 0)
+			mlx_destroy_image(scene->screen.mlx,
+			scene->images[scene->cam_count].ptr);
+	}
 }

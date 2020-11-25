@@ -16,6 +16,8 @@ int
 	ft_parse_res(char **a, t_scene *scene)
 {
 	t_screen	*screen;
+	int			max_resx;
+	int			max_resy;
 
 	if (scene->res_set)
 		return (0);
@@ -24,11 +26,12 @@ int
 	screen->height = ft_atoi(a[2]);
 	if (screen->width >= 0 && screen->height >= 0)
 	{
-		if (screen->width > MAX_RESX)
-			screen->width = MAX_RESX;
-		if (screen->height > MAX_RESY)
-			screen->height = MAX_RESY;
 		screen->mlx = mlx_init();
+		mlx_get_screen_size(scene->screen.mlx, &max_resx, &max_resy);
+		if (screen->width > max_resx)
+			screen->width = max_resx;
+		if (screen->height > max_resy)
+			screen->height = max_resy;
 		screen->aspect_ratio = (double)screen->width / (double)screen->height;
 		screen->window = mlx_new_window(screen->mlx,
 		screen->width, screen->height, "miniRT");

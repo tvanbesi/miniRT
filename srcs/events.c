@@ -31,7 +31,7 @@ int
 	t_scene	*scene;
 
 	scene = (t_scene*)param;
-	if (keycode == 49)
+	if (keycode == 32)
 	{
 		mlx_clear_window(scene->screen.mlx, scene->screen.window);
 		mlx_put_image_to_window(scene->screen.mlx, scene->screen.window,
@@ -40,7 +40,7 @@ int
 		if (scene->camselect >= scene->cam_count)
 			scene->camselect = 0;
 	}
-	if (keycode == 53)
+	else if (keycode == 113 || keycode == 65307)
 		ft_close((void*)scene);
 	return (0);
 }

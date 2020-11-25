@@ -51,9 +51,6 @@ int
 	main(int argc, char **argv)
 {
 	t_scene		scene;
-	char		*line;
-	int			fd;
-	int			gnl;
 
 	ft_mkscene(&scene);
 	if (argc == 2)

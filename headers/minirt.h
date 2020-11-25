@@ -13,19 +13,18 @@
 #ifndef MINIRT_H
 # define MINIRT_H
 
-# include <mlx.h>
 # include <math.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "libft.h"
+# include "mlx.h"
+# include "mlx_int.h"
 
 # define MAX_OBJECTS 100
 # define MAX_LIGHTS 10
 # define MAX_CAMERAS 10
-# define MAX_RESX 1920
-# define MAX_RESY 1080
 # define BITS_PER_PIXEL 32
 # define ENDIAN 0
 
