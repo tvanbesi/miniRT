@@ -46,11 +46,13 @@ NAME				= miniRT
 					${CC} ${CFLAGS} ${INC} -c -o $@ $<
 all :
 					cd libft && make
+					cd minilibX && make
 					make ${NAME}
 ${NAME} :			${OBJS}
 					${CC} -o ${NAME} ${OBJS} libft/libft.a minilibX/libmlx.a -lXext -lX11 -lm
 clean :
 					cd libft && make clean
+					cd minilibX && make clean
 					${RM} ${OBJS}
 fclean :			clean
 					cd libft && make fclean
