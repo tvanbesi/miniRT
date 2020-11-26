@@ -25,12 +25,15 @@ int
 	while ((gnl = get_next_line(fd, &line)) == 1)
 	{
 		if (!ft_parse_line(line, scene) && ft_strncmp(line, "", 1))
+		{
+			free(line);
 			return (0);
+		}
 		free(line);
 	}
 	if (gnl == -1)
 		return (0);
-	if (!scene->res_set || !scene->amb_set)
+	if (!scene->res_set || !scene->amb_set || !scene->cam_count)
 		return (0);
 	return (1);
 }

@@ -71,8 +71,7 @@ static void
 }
 
 static void
-	ft_ssc(t_scene *scene, t_surf_pt *p_hit,
-	unsigned char **data_addr, t_ray *ray)
+	ft_ssc(t_scene *scene, t_surf_pt *p_hit, t_ray *ray)
 {
 	ft_shade_amblight(p_hit, &scene->objects[p_hit->iobj], &scene->amblight);
 	if (scene->objects[p_hit->iobj].cylinder.type == CYLINDER)
@@ -80,7 +79,6 @@ static void
 	ft_shadray(ray, scene, p_hit);
 	if (scene->objects[p_hit->iobj].cylinder.type == CYLINDER)
 		scene->objects[p_hit->iobj].cylinder.setfacehit = 0;
-	ft_color_pixel(data_addr, p_hit->color);
 }
 
 int
@@ -102,7 +100,8 @@ int
 			p_hit.color = 0.0;
 			ft_primray(ray, scene, &p_hit);
 			if (p_hit.d_to_ori != INFINITY)
-				ft_ssc(scene, &p_hit, &data_addr, ray);
+				ft_ssc(scene, &p_hit, ray);
+			ft_color_pixel(&data_addr, p_hit.color);
 			free(ray);
 		}
 		j = 0;

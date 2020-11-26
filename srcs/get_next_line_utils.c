@@ -74,8 +74,9 @@ char
 }
 
 int
-	ft_clear(t_buf *tbuf, int r)
+	ft_clear(t_buf *tbuf, char *line, int r)
 {
+	free(line);
 	free(tbuf->buf);
 	tbuf->buf = NULL;
 	tbuf->ofs = 0;

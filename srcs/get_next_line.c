@@ -37,7 +37,7 @@ static int
 	if (n && n == (size_t)tbuf->ltr)
 		return (0);
 	if (tbuf->ltr)
-		tbuf->ltr = tbuf->ltr - (n + 1) == 0 ? (ssize_t)(-1) : (ssize_t)(tbuf->ltr - (n + 1));
+		tbuf->ltr = tbuf->ltr - (n + 1) == 0 ? -1 : (tbuf->ltr - (n + 1));
 	tbuf->ofs += n + 1;
 	return (1);
 }
@@ -63,10 +63,10 @@ int
 		if ((mnl = make_next_line(fd, line, &tbuf)) == 1)
 			return (1);
 		else if (mnl == 0)
-			return (ft_clear(&tbuf, 0));
+			return (ft_clear(&tbuf, *line, 0));
 		else
 			return (-1);
 	}
 	else
-		return (ft_clear(&tbuf, 0));
+		return (ft_clear(&tbuf, *line, 0));
 }

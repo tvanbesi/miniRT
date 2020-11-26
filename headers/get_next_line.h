@@ -30,6 +30,6 @@ typedef struct		s_buf
 char				*ft_strxtd(char *line, const char *buf, size_t n);
 int					get_next_line(int fd, char **line);
 ssize_t				ft_strnlchr(const char *s, size_t ofs);
-int					ft_clear(t_buf *tbuf, int r);
+int					ft_clear(t_buf *tbuf, char *line, int r);
 
 #endif

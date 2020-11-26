@@ -77,7 +77,7 @@ int
 {
 	int	fd;
 
-	if ((fd = open(filename, O_WRONLY | O_CREAT)) < 0)
+	if ((fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0777)) < 0)
 		return (0);
 	ft_write_header(fd, &scene->screen);
 	ft_write_info(fd, &scene->screen);

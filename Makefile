@@ -7,6 +7,7 @@ _SRCS				=	draw.c \
 						intersect_obj1.c \
 						intersect_obj2.c \
 						intersect_utils.c \
+						main.c \
 						math.c \
 						math_vector1.c \
 						math_vector2.c \
@@ -35,11 +36,11 @@ _SRCS				=	draw.c \
 SRCS				= ${_SRCS:%=${SDIR}/%}
 OBJS				= ${_SRCS:.c=.o}
 CC					= clang
-CFLAGS				= -Wall -Werror -Wextra
+CFLAGS				= -g -Wall -Werror -Wextra
 INC					= -Iheaders -IminilibX -Ilibft
 LIB					= lib/
 RM					= rm -rf
-NAME				= miniRT.a
+NAME				= miniRT
 
 %.o :				${SDIR}/%.c
 					${CC} ${CFLAGS} ${INC} -c -o $@ $<
@@ -47,8 +48,7 @@ all :
 					cd libft && make
 					make ${NAME}
 ${NAME} :			${OBJS}
-					ar rc ${NAME} ${OBJS} libft/*.o
-					ln -f ${NAME} ${LIB}${NAME}
+					${CC} -o ${NAME} ${OBJS} libft/libft.a minilibX/libmlx.a -lXext -lX11 -lm
 clean :
 					cd libft && make clean
 					${RM} ${OBJS}

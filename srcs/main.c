@@ -41,6 +41,7 @@ static int
 		return (0);
 	if (!ft_draw_all_images(scene))
 		return (0);
+	ft_key_hook(32, (void*)scene);
 	mlx_key_hook(scene->screen.window, ft_key_hook, scene);
 	mlx_hook(scene->screen.window, 17, 0, ft_close, scene);
 	mlx_loop(scene->screen.mlx);
