@@ -38,7 +38,6 @@ OBJS				= ${_SRCS:.c=.o}
 CC					= clang
 CFLAGS				= -g -Wall -Werror -Wextra
 INC					= -Iheaders -IminilibX -Ilibft
-LIB					= lib/
 RM					= rm -rf
 NAME				= miniRT
 
