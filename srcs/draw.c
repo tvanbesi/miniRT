@@ -31,5 +31,6 @@ int
 	while (i++ < scene->cam_count)
 		if (!ft_draw_image(scene, i - 1))
 			return (0);
+	scene->camselect = 0;
 	return (1);
 }

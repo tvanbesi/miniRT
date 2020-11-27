@@ -55,10 +55,12 @@ int
 	ft_intersect_triangle(t_ray *ray, t_object *object, double *solution)
 {
 	t_object	tr_plane;
+	t_plane		tmp;
 	t_coords	point;
 
-	tr_plane = ft_mkplane(object->triangle.v1,
-	object->triangle.norm, object->triangle.color);
+	tmp = (t_plane){PLANE, object->triangle.v1, (t_coords){0, 0, 0},
+	object->triangle.norm, object->triangle.rgb, object->triangle.color};
+	tr_plane.plane = tmp;
 	if (ft_intersect_plane(ray, &tr_plane, solution))
 	{
 		point = (t_coords){ray->dir.x, ray->dir.y, ray->dir.z};
