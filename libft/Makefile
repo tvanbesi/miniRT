@@ -48,15 +48,12 @@ B_OBJS		= ${B_SRCS:.c=.o}
 CC			= clang
 CFLAGS		= -Wall -Wextra -Werror
 NAME		= libft.a
-LIB			= ../lib/
 RM			= rm -f
 
 all :		${OBJS}
 			make ${NAME}
 ${NAME} :	${OBJS}
 			ar rc ${NAME} ${OBJS}
-			mkdir -p ../lib
-			ln -f ${NAME} ${LIB}${NAME}
 bonus :		${OBJS} ${B_OBJS}
 			ar rc ${NAME} ${OBJS} ${B_OBJS}
 clean :
